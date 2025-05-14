@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="iletisim.css">
+
+</head>
+
+<body>
+    <h1 class="yazi">İLETİŞİM SAYFASINA HOŞGELDİNİZ</h1> 
+
+<div id="div1" class="div"> 
+
+    <form method="post" action="iletisim.php">
+
+    <label style="margin-left: 3px;">İsim </label> <br>
+    <input type="text" name="isim" id="isim"  autocomplete="off" style="border-radius: 9px; width: 600px; height: 35px; background-color: #c2c2c2; font-family: 'Times New Roman', Times, serif; font-size: 20px;" > <br> <br>
+
+    <label style="margin-left: 3px;">Soyisim </label> <br>
+    <input type="text" name="soyisim" id="soyisim" autocomplete="off" style="border-radius: 9px; width: 600px; height: 35px; background-color: #c2c2c2; font-family: 'Times New Roman', Times, serif; font-size: 20px;" > <br> <br>
+
+    <label style="margin-left: 3px;">E-posta </label> <br>
+    <input type="text" name="eposta" id="eposta" autocomplete="off" style="border-radius: 9px; width: 600px; height: 35px; background-color: #c2c2c2; font-family: 'Times New Roman', Times, serif; font-size: 20px;" placeholder="ornekyazi@gmail.com" > <br> <br>
+
+    <label style="margin-left: 3px;">Telefon Numarası </label> <br>
+    <input type="text" name="tel" id="tel" autocomplete="off" style="border-radius: 9px; width: 600px; height: 35px; background-color: #c2c2c2; font-family: 'Times New Roman', Times, serif; font-size: 20px;" > <br> <br>
+
+    <label style="margin-left: 3px;">Cinsiyet </label> <br> <br>
+
+    <input type="radio"  name="cinsiyet" value="Erkek"> <img src="man.png" style="width: 30px; height: 30px;">
+    <input type="radio"  name="cinsiyet" value="Kadın"> <img src="woman.png" style="width: 30px; height: 30px;"> <br> <br>
+
+    <label style="margin-left: 3px;">Mesaj</label> <br>
+    <textarea id="Mesaj" name="mesaj" rows="5" cols="79" style="border-radius: 9px; background-color: #c2c2c2; font-family: 'Times New Roman', Times, serif;" placeholder="İletmek istediğiniz mesajı yazınız."></textarea> <br> <br>
+
+    <input type="button" value="Kontrol" onclick="js:Kontrol();">
+    <input type="submit" id="gonder" value="Gönder" onclick="js:Gonder();" disabled>
+    
+    <input type="reset" value="Temizle">
+
+    </form>
+</div>
+
+    <script>
+
+        function Kontrol ()
+        {
+            var isim = document.getElementById("isim").value;
+            var soyisim = document.getElementById("soyisim").value;
+            var eposta = document.getElementById("eposta").value;
+            var tel = document.getElementById("tel").value;
+            
+            var cinsiyetler = document.getElementsByName("cinsiyet");
+            var cinsiyetKontrol = false;
+
+            var mesaj = document.getElementById ("Mesaj").value;
+
+            var kontrol = eposta.substr(-10);
+
+            if(isim == ""){
+                alert("İsim alanı boş kaldı.");
+                document.getElementById("gonder").disabled=true;
+                return false;
+            }
+            if(soyisim == ""){
+                alert("Soyisim alanı boş kaldı.");
+                document.getElementById("gonder").disabled=true;
+                return false;
+            }
+            if(eposta == "" ){
+                alert("E-posta alanı boş kaldı.");
+                document.getElementById("gonder").disabled=true;
+                return false;
+            }
+            if(kontrol !== "@gmail.com" ){
+                alert("E-postanız @gmail.com şeklinde olmalıdır.");
+                document.getElementById("gonder").disabled=true;
+                return false;
+            }
+
+            if (tel.length !== 11 && String(Number(tel)) !== tel) {
+            alert("Telefon numarası 11 haneli olmalı ve yalnızca rakamlardan oluşmalıdır.");
+            document.getElementById("gonder").disabled=true;
+            return false;
+            }
+
+            if(mesaj == ""){
+                alert ("Mesaj alanını boş bıraktınız.");
+                document.getElementById("gonder").disabled=true;
+                return false;
+            }
+            if (!cinsiyetler[0].checked && !cinsiyetler[1].checked){
+                alert ("Cinsiyet alanını boş bıraktınız.");
+                document.getElementById("gonder").disabled=true;
+                return false;    
+            }   
+
+            document.getElementById("gonder").disabled=false;
+            alert("Tüm bilgileri doğru bir şekilde girdiniz.");
+
+
+            return true;
+        }
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
