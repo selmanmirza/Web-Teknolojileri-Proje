@@ -1,0 +1,164 @@
+body
+        {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(190, 190, 190);
+        }
+
+        .yazi
+        {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: 20px;
+            text-align: center;
+            color: rgb(3, 122, 3);
+
+        }
+        .tarih
+        {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;         
+            width: 100%;
+            height: auto;
+            color: white;
+            background-color: rgb(1, 87, 5);
+            border-radius: 75px;
+            box-shadow: 12px 12px 12px rgba(90, 90, 90, 0.3);
+            box-sizing: border-box;
+        }
+        .bilgiler
+        {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;         
+            width: 100%;
+            height: auto;
+            color: rgb(255, 255, 255);
+            background-color: rgb(1, 87, 5);
+            border-radius: 75px;
+            box-shadow: 12px 12px 12px rgba(90, 90, 90, 0.3);
+            box-sizing: border-box;
+        }
+
+        .geri, .ileri 
+        {
+        position: absolute;
+        top: 40%;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-top: 100px;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 50%;
+        }
+
+        .geri 
+        {
+        left: 33%; 
+
+        }
+
+        .ileri 
+        {
+        right: 33%;
+        }
+
+        .geri:hover, .ileri:hover 
+        {
+        background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .gezi
+        {
+            margin-top: 27px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;         
+            width: 100%;
+            height: auto;
+            color: rgb(255, 255, 255);
+            background-color: rgb(1, 87, 5);
+            border-radius: 75px;
+            box-shadow: 12px 12px 12px rgba(90, 90, 90, 0.3);
+            box-sizing: border-box;
+        }
+
+@media screen and (max-width: 768px) {
+    .yazi {
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .tarih, .bilgiler, .gezi {
+        width: 95%;
+        border-radius: 30px;
+    }
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .geri, .ileri {
+        top: 50%;
+        padding: 8px 12px;
+        font-size: 16px;
+        left: 10%;
+        right: 10%;
+    }
+
+    .geri {
+        left: 10%;
+    }
+
+    .ileri {
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .yazi {
+        font-size: 16px;
+    }
+
+    .geri, .ileri {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .gezi img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 10px auto !important;
+    }
+
+    #sliderResmi {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 15px auto !important;
+    }
+
+    .geri, .ileri {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5% !important;
+        right: 5% !important;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .geri {
+        left: 5% !important;
+    }
+
+    .ileri {
+        right: 5% !important;
+    }
+}

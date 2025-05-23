@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="iletisim.css">
+</head>
+<body>
+    <h1 class="yazi">İLETİŞİM SAYFASINA HOŞGELDİNİZ</h1> 
+
+    <div id="div1" class="div"> 
+        <form method="post" action="iletisim.php">
+            <label>İsim </label> <br>
+            <input type="text" name="isim" id="isim" autocomplete="off" class="input"> <br><br>
+
+            <label>Soyisim </label> <br>
+            <input type="text" name="soyisim" id="soyisim" autocomplete="off" class="input"> <br><br>
+
+            <label>E-posta </label> <br>
+            <input type="text" name="eposta" id="eposta" autocomplete="off" class="input" placeholder="ornekyazi@gmail.com"> <br><br>
+
+            <label>Telefon Numarası </label> <br>
+            <input type="text" name="tel" id="tel" autocomplete="off" class="input"> <br><br>
+
+            <label>Cinsiyet </label> <br><br>
+            <input type="radio" name="cinsiyet" value="Erkek"> <img src="man.png" class="icon">
+            <input type="radio" name="cinsiyet" value="Kadın"> <img src="woman.png" class="icon"> <br><br>
+
+            <label>Mesaj</label> <br>
+            <textarea id="Mesaj" name="mesaj" rows="5" class="textarea" placeholder="İletmek istediğiniz mesajı yazınız."></textarea> <br><br>
+
+            <input type="button" value="Kontrol" onclick="Kontrol();">
+            <input type="submit" id="gonder" value="Gönder" onclick="Gonder();" disabled>
+            <input type="reset" value="Temizle">
+        </form>
+    </div>
+
+    <script>
+        function Kontrol() {
+            var isim = document.getElementById("isim").value;
+            var soyisim = document.getElementById("soyisim").value;
+            var eposta = document.getElementById("eposta").value;
+            var tel = document.getElementById("tel").value;
+            var cinsiyetler = document.getElementsByName("cinsiyet");
+            var mesaj = document.getElementById("Mesaj").value;
+            var kontrol = eposta.substr(-10);
+
+            if (isim === "") return alert("İsim alanı boş kaldı."), disableSubmit();
+            if (soyisim === "") return alert("Soyisim alanı boş kaldı."), disableSubmit();
+            if (eposta === "") return alert("E-posta alanı boş kaldı."), disableSubmit();
+            if (kontrol !== "@gmail.com") return alert("E-postanız @gmail.com şeklinde olmalıdır."), disableSubmit();
+            if (tel.length !== 11 || String(Number(tel)) !== tel) return alert("Telefon numarası 11 haneli olmalı ve yalnızca rakamlardan oluşmalıdır."), disableSubmit();
+            if (mesaj === "") return alert("Mesaj alanını boş bıraktınız."), disableSubmit();
+            if (!cinsiyetler[0].checked && !cinsiyetler[1].checked) return alert("Cinsiyet alanını boş bıraktınız."), disableSubmit();
+
+            alert("Tüm bilgileri doğru bir şekilde girdiniz.");
+            document.getElementById("gonder").disabled = false;
+        }
+
+        function disableSubmit() {
+            document.getElementById("gonder").disabled = true;
+        }
+    </script>
+</body>
+</html>

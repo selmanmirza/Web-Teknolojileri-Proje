@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="ilgi.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h1 class="baslik"> İLGİ ALANLARIM </h1>
+
+
+<div class="kapsayici">
+
+    <div class="ilgi">
+        
+        <h2>ARABALAR</h2>
+
+        <h3>Aslında arabalara ilgim çocuklugumdan itibaren başlıyor. <br>  Amcam da arabalarla ilgili bi insan olmasından kaynaklı onun bilgisayarında bir sürü yarış oyunu vardı (Need For Speed gibi). <br>  O zamanlar need for speed oynaya oynaya arabalara ilgim oldu. <br> Ve şuanda hayalimdeki araba Ford Mustang 1969.  </h3>
+
+        <div class="arama-kutusu">
+            <input type="text" id="arabaAdi" placeholder="Araba adı girin (örnek: BMW 320i)">
+            <button class="ara" onclick="arabaAra()">Ara</button>
+        </div>
+
+
+        <div id="arabalar">
+
+        </div>
+
+    </div>
+
+    <div class="ilgi">
+
+        <h2> FİLMLER VE DİZİLER </h2>
+
+        <h3>Filmlere ve dizilere ilgimin nasıl başladığını anlatmama gerek yok. <br> Her zaman dizi ve film seven bir insan olmuşumdur.</h3>
+
+        <div class="arama-kutusu">
+
+                <input type="text" id="filmAdi" placeholder="Film-Dizi adı girin (örnek: Vikings)">
+                <button class="ara" onclick="filmAra()">Ara</button>
+         </div>
+
+        <div id="filmler">
+
+        </div>
+
+    </div>
+</div>
+
+
+    <script>
+    
+    function filmAra() {
+            const filmAdi = document.getElementById("filmAdi").value.trim();
+            const apiKey = "71b84bfa";
+
+            if (!filmAdi) {
+                alert("Lütfen bir film adı girin");
+                return;
+            }
+
+            const url = `https://www.omdbapi.com/?t=${encodeURIComponent(filmAdi)}&apikey=${apiKey}`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const filmlerDiv = document.getElementById("filmler");
+                    filmlerDiv.innerHTML = "";
+
+                    if (data.Response === "False") {
+                        filmlerDiv.innerHTML = `<p style="color:red;">Film bulunamadı: ${data.Error}</p>`;
+                        return;
+                    }
+
+                    const filmDiv = document.createElement("div");
+                    filmDiv.classList.add("movie");
+                    filmDiv.innerHTML = `
+                        <h3>${data.Title} (${data.Year})</h3>
+                        <img src="${data.Poster !== 'N/A' ? data.Poster : 'https://via.placeholder.com/300x450?text=No+Image'}" width="200" border-radius: 20px;>
+                        <p><strong>IMDb:</strong> ${data.imdbRating}</p>
+                        <p><strong>Tür:</strong> ${data.Genre}</p>
+                        <p><strong>Konu:</strong> ${data.Plot}</p>
+                    `;
+                    filmlerDiv.appendChild(filmDiv);
+                })
+
+                .catch(error => {
+                    document.getElementById("filmler").innerHTML = `<p style="color:red;">Veri alınırken hata oluştu.</p>`;
+                });
+        }
+
+        function arabaAra() {
+    const arabaAdi = document.getElementById("arabaAdi").value.trim();
+    const arabalarDiv = document.getElementById("arabalar");
+    arabalarDiv.innerHTML = "";
+
+    if (!arabaAdi) {
+        alert("Lütfen bir araba adı girin!");
+        return;
+    }
+
+    const url = `https://www.carimagery.com/api.asmx/GetImageUrl?searchTerm=${encodeURIComponent(arabaAdi)}`;
+
+    fetch(url)
+        .then(response => response.text())
+        .then(str => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(str, "text/xml");
+            const imageUrl = xmlDoc.getElementsByTagName("string")[0].textContent;
+
+            // Görsel kontrolü (boşsa yedek göster)
+            const imgSrc = imageUrl && imageUrl.startsWith("http") ? imageUrl : "https://via.placeholder.com/300x200?text=Görsel+bulunamadı";
+
+            const arabaHTML = `
+                <h3>${arabaAdi}</h3>
+                <img src="${imgSrc}" width="300" style="border-radius: 10px;">
+            `;
+            arabalarDiv.innerHTML = arabaHTML;
+        })
+        .catch(error => {
+            console.error("Hata:", error);
+            arabalarDiv.innerHTML = `<p style="color:red;">Veri alınırken hata oluştu. Lütfen daha sonra tekrar deneyin.</p>`;
+        });
+}
+
+
+        
+
+
+        
+       
+                            
+        
+            
+
+
+    </script>
+
+
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,242 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="sehrim.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<div class="yazi"> <h1>Marmaranın Doğasıyla Büyüleyen Şehri: SAKARYA</h1> </div>
+
+<div class="tarih"><h1 style="text-align: center; font-size: 40px;">Sakaryanın Tarihçesi</h1>
+
+    <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-size: 20px; margin-left: 10px; display: block;">
+        Osmanlı Dönemi:
+Sakarya, 14. yüzyılda Osmanlı topraklarına katıldı.
+
+Özellikle Orhan Gazi döneminde Osmanlı hâkimiyetine geçti.
+
+Osmanlı döneminde önemli bir tarım ve ticaret merkezi olarak gelişti. <br> <br>
+
+Cumhuriyet Dönemi:
+Sakarya Meydan Muharebesi (1921), Kurtuluş Savaşı'nın dönüm noktalarından biridir, ancak bu muharebe günümüzdeki Sakarya il sınırları dışında, Ankara'ya daha yakın bir bölgede gerçekleşmiştir. Adını Sakarya Nehri'nden almıştır.
+
+1954 yılında Adapazarı merkez olmak üzere il statüsü kazanmıştır. <br> <br>
+
+Günümüz:
+Sanayi, tarım ve ulaşım açısından Türkiye'nin önemli şehirlerinden biridir.
+
+1999 depreminden büyük ölçüde etkilenmiştir ancak sonrasında yeniden yapılandırılmıştır.</label>
+
+    <button class="geri" onclick="js:geri();" >←</button>
+    <button class="ileri"  onclick ="js:ileri();">→</button>
+
+    <a id="resimLink" href="https://www.iha.com.tr/haber-sakaryanin-eski-fotograflari-gorenleri-tarih-yolculuguna-cikariyor-1143064" target="_blank">
+
+    <img id="sliderResmi" src="sakaryatarih.webp"  width="500px" height="400px" style="margin-left: 37%; margin-top: 15px; border-radius: 20px;">
+
+    </a>
+
+
+    
+
+<script>
+    const resimler = [
+    "sakaryatarih.webp",
+    "sakaryatarih2.jpg",
+    "sakaryatarih3.jpg",
+    "sakaryatarih4.jpg"
+    ]
+
+    const linkler = [
+    "https://www.iha.com.tr/haber-sakaryanin-eski-fotograflari-gorenleri-tarih-yolculuguna-cikariyor-1143064",
+    "https://yerelkultur.org/sakaryanin-tarihi-cografyasi/",
+    "https://bolge9.tarimorman.gov.tr/Menu/95/Sakarya-Meydan-Muharebesi-Ve-Onemi",
+    "https://tr.pinterest.com/dcagci/eski-sakarya/"
+
+    ]
+
+    let index=0;
+
+    const img = document.getElementById("sliderResmi");
+    const link = document.getElementById("resimLink");
+    
+    function guncelle(){
+        img.src = resimler[index];
+        link.href = linkler[index];
+    }
+
+    function ileri(){
+        index = (index+1) % resimler.length;
+        guncelle();
+    }
+    function geri(){
+        index = (index - 1 + resimler.length) % resimler.length;
+        guncelle();
+    }
+
+
+
+
+</script>
+
+
+</div>
+
+<div class="bilgiler">
+    <h1 style="text-align: center; font-size: 40px;">Sakarya Hakkında Bilgiler</h1>
+
+    <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-size: 20px; text-align: center; display: block;">Coğrafya ve İklim <br> <br>
+Yüzölçümü: 4.823 km² <br> 
+
+Komşuları: Doğuda Düzce, güneydoğuda Bolu, güneyde Bilecik, batıda Kocaeli, kuzeyde ise Karadeniz ile çevrilidir. <br> 
+
+İklim: Kuzeyde Karadeniz iklimi, batı ve güneyde Marmara iklimi etkili olup, kışlar ılık ve yağışlı, yazlar ise sıcak ve nemlidir. <br> <br> Nüfus ve Demografi <br>
+2024 Nüfusu: 1.110.735 kişi (erkek: 556.928, kadın: 553.807) <br>
+
+Nüfus Yoğunluğu: 228 kişi/km² <br> <br>
+
+Ekonomi ve Sanayi <br>
+Sakarya, sanayi ve tarımda güçlü bir ekonomiye sahiptir: <br> <br>
+
+Sanayi: Otomotiv (Toyota, Otokar, TürkTraktör), makine, tekstil ve gıda sektörlerinde faaliyet gösteren büyük firmalar bulunur. <br>
+
+Tarım: Fındık, mısır, buğday, patates, ayva, şeftali gibi ürünlerin üretimi yaygındır. <br>
+
+Organize Sanayi Bölgeleri: 5 OSB, 100.000'den fazla istihdam sağlar ve yeni OSB yatırımları devam etmektedir.
+
+</label>
+</div>
+
+<div class="gezi"> <h1 style="text-align: center; font-size: 40px;">Sakaryada Gezilecek Yerler (8)</h1>
+
+    <label style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: bold; font-size: 20px; display: block; margin-left: 10px;">
+        
+    <h2>1.Poyrazlar Gölü </h2> 
+    Kent merkezinin 8 km doğusunda bulunan ve Sakarya Nehrinin kenarında yer alan Poyrazlar Gölü alüvyal bir set gölü olarak biliniyor. <br> 
+    Sazlıklarla kaplı olan kısımları ve etrafında bulunan orman eşsiz manzaralar sunuyor.  <br>
+    Orman Bölge Müdürlüğü tarafından günübirlik ziyaretçiler için mesire yeri olarak düzenlenmiş olan çevresi özel sektör tarafından işletiliyor.  <br>
+    Yeme içme ihtiyaçlarınızı karşılayabileceğiniz göl etrafında bulunan işletmelerin yanı sıra, Poyrazlar Gölü’nün pek çok farklı kuş türüne ev sahipliği yaptığını da söylemek gerekiyor. <br>
+
+    <img src="poyrazlar.jpg"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    <img src="poyrazlar2.webp"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+
+    <h2>2.Sapanca Gölü</h2>
+
+    Gezginler tarafından Sakarya’da mutlaka görülmesi gereken yerler listesinin başında bulunan bu göl, Türkiye’nin en güzel gollerinden biri olarak biliniyor. <br>
+    Yerli ve yabancı turistler tarafından yoğun bir ilgi gören Sapanca Gölü, bünyesinde barındırdığı çeşitli güzellikleri ile görenleri büyülemeyi başarıyor. <br>
+
+    Turistik değerlere sahip bir şehir olması sebebiyle dikkat çeken Sakarya, Sapanca Gölü gibi oldukça önemli bir yapıya sahiplik yapıyor. <br>
+    Eşsiz bir manzaraya sahip olan ve ziyaretçiler tarafından yoğun bir ilgi gören Sapanca Gölü, stabil olan suyu ile hem yaz hem de kış aylarında ziyaret ediliyor. <br>
+    Sapanca Gölünde vakit geçirirken kamp yapabilir, fotoğraf çekebilir, balık avlama etkinliklerine katılabilirsiniz. <br>
+    öl Sakarya merkezde yalnızca 20 kilometre uzaklıkta yer alıyor. <br>
+    Bu gölün en büyük özelliği ise bungalov evleriyle ünlü olması. Özellikle bölgede konaklamak istiyorsanız bungalov deneyimi yaşayabilirsiniz.
+
+    <img src="sapanca.jpg"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    <img src="sapanca2.webp"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+
+    <h2>3.Acarlar Longozu</h2>
+
+    1500 metrekareden daha geniş bir alan üzerinde bulunan Acarlar Longozu, Türkiye’nin en büyük longoz ormanı olma özelliği taşıyor. <br>
+    Eşsiz bir görüntü sunuyor olmasının yanı sıra birinci derecede doğal sit alanı olması sebebiyle de dikkat çeken Acarlar Longozu özellikle bahar aylarında adeta akına uğruyor. <br>
+
+    Muhteşem nilüfer görüntüleri sunan Acarlar Longozu turistler tarafından yoğun bir ilgi görüyor. <br>
+    Longoz bitki türlerinin pek çoğuna ev sahipliği yapıyor olmasının yanı sıra kuş gözlem için en ideal noktalardan biri olarak biliniyor.  <br>
+    Mutlaka ziyaret etmeniz gereken longoza şehir merkezinden toplu taşıma araçları veya şahsi aracınız ile ulaşabilirsiniz. <br>
+    Longoz civarında yeme içme ihtiyaçlarınızı karşılayabileceğiniz çeşitli işletmeler de bulunuyor. <br>
+
+   <img src="acarlar.jpg"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+   <img src="acarlar2.webp"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+
+   <h2>4.Doğançay Şelalesi</h2>
+
+   Sapanca’da Gezilecek Yerlerlistesinin başında gelen Doğançay Şelalesi deniz seviyesinden 600 metre yüksekte bulunuyor. <br>
+   Şelaleye giden yolda yürüyüş parkurları bulunuyor. <br>
+   Doğayla iç içe ve keyifli bir gün geçirmek isteyenlerin tercihi olmayı başaran Doğançay Şelalesi, ziyaretçilerine huzurlu bir ambiyans sunuyor. <br>
+   Doğançay Şelalesi’ne ulaşmak için şehir içi ulaşım araçlarını kullanabilir veya şahsi arabanız ile ulaşım sağlayabilirsiniz. <br>
+   Şehir merkezine yalnızca 25 km mesafede yer alan şelale 600 metre yükseklikte bulunuyor. <br>
+   Tamamen asfalt olan yolda kolaylıkla ulaşım sağlayabilirsiniz ancak ulaşım için son 2 km’yi toprak yol ile yürümeniz gerekir. <br>
+   Doğançay Şelalesi’nin Doğançay Köyünde yer alıyor, dolayısıyla bu köye giden toplu taşıma araçlarıyla da ulaşım sağlayabilirsiniz. <br>
+
+    <img src="dogancay.jpg"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    <img src="dogancay.webp"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+
+    <h2>5.Justiniaus Köprüsü (Beşköprü)</h2>
+
+    Sakarya şehrinde yer alan Justiniaus Köprüsü (Beşköprü) şehrin tarihi açıdan en dikkat çekici yapılarından biri. <br>
+    Roma döneminde inşa edildiği düşünülen yapının tarihi değerinin yanı sıra manzara açısından da unutulmaz bir yapı olduğunu söylemek gerekiyor. <br>
+    Doğal güzelliklerin başında gelen ve Sakarya seyahatiniz esnasında mutlaka ziyaret etmeniz gereken Justiniaus Köprüsü (Beşköprü) özellikle gün batımında bulunanlara unutulmaz manzaralar sunmayı başarıyor. <br>
+
+    İstanbul ile Anadolu arasında bağlantı sağlamak amacıyla Geç Roma Döneminde inşa edilen Justiniaus Köprüsü 365 metre uzunluğunda ve 12 kemere sahip. <br>
+    Şehir merkezinde bulunuyor olması sebebiyle kolay bir şekilde ziyaretinizi gerçekleştirebilirsiniz. <br>
+ 
+    <img src="beskopru.webp"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    <img src="beskopru2.png"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;">    
+
+    <h2>6.Uzun Çarşı</h2>
+    Osmanlı döneminden kalan en eski ve en köklü yapıların başında Uzun Çarşı yer alıyor. <br>
+    Pek çok farklı esnaf ile farklı kültürleri bir araya getirmeyi başaran Uzun Çarşı günümüzde ana ticaret merkezi konumunda bulunuyor. <br>
+    Bunun yanı sıra Sakarya’nın meşhur yemekleri hakkında da hizmet veren pek çok farklı restorana Uzun Çarşı ev sahipliği yapıyor. <br>
+    Şehir merkezine yakın konumda bulunuyor olması sebebiyle hem turistler hem de yöre halkı tarafından en çok tercih edilen yerlerden biri olarak biliniyor. <br>
+
+    <img src="uzuncarsi.webp"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    <img src="uzuncarsi2.webp"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;"> 
+
+    <h2>7.Serdivan</h2>
+    Adapazarı merkezine sadece 6 kilometre uzaklıkta yer alan ve keyifli günübirlik geziler yapabileceğin Serdivan, hem doğal güzellikleri hem de bilim merkezi ve tarihi hazineleri ile ilgi çekiyor. <br>
+    Sakarya Gölü kenarında 8,5 kilometrelik kıyı şeridine sahip küçük bir ilçe olan Serdivan, son yıllarda deniz seviyesinden 250 metre yükseklikteki Taraklı Karagöl Yaylası'nda benzersiz doğal güzellikler üstünde düzenlenen yamaç paraşütü etkinlikleriyle de yerli ve yabancı turistleri kendine çekiyor. <br>
+
+    Çocuklu ailelerin mutlaka ziyaret etmesini önerdiğimiz Planetaryum (Gezegen Evi) ise her yaştan çocuklara ve gençlere bilim ile teknolojiyi eğlenceli bir şekilde öğretmeyi amaçlayan pek çok sergi, atölye ve etkinliğe sahip. <br>
+    Yemyeşil yaylalardan küçük göllere, derelere ve çam ormanlarına kadar sıcak yaz sıcaklarında keyifli doğa gezileri yapabileceğin birçok sevilen alana sahip. <br>
+
+    <img src="serdivan.jpeg"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    <img src="serdivan2.webp"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    
+    <h2>8.Maden Deresi</h2>
+
+    Sakarya’nın Karadeniz kıyısında yer alan ve Kocaeli ile Karasu illeri arasında konumlanan Maden Deresi, kaynağını Çam Dağı’ndan alıyor. <br>
+    Kuzeye doğru akışa geçen ve 30 kilometrelik uzunluğu ile tabiat parkı olarak değerlendirilen Maden Deresi gibi tarihin en eski zamanları tanıklık etmiş olması sebebiyle de dikkat çekiyor. <br>
+
+    Fiziksel olarak parçalanarak çakıl taşlarının meydana gelmesine yol açan Maden Deresi, eşsiz manzaralar ile görenleri büyülemeyi başarıyor. <br>
+    Maden Deresi etrafında yeme içme ihtiyaçlarınızı karşılayabileceğiniz kafe ve restoranlar da bulunuyor. <br>
+    Bunun yanı sıra Maden Deresi’nin orman açısından da oldukça zengin olduğunu ve meşe, çınar, gürgen gibi pek çok ağaca ev sahipliği yaptığını da söylemek gerekiyor. <br>
+    Şehir içerisinden toplu taşıma araçları ya da şahsi aracınız ile ulaşabileceğiniz Maden Deresi, doğayla iç içe ve huzurlu bir gün geçirmek için en ideal noktalardan birisi olmayı da başarıyor. <br>
+
+    <img src="maden-deresi.jpg"  width="900px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+    <img src="madenderesi2.webp"  width="970px" height="500px" style="border-radius: 20px; margin-top: 10px;">
+
+</label>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
